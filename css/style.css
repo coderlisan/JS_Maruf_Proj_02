@@ -1,0 +1,30 @@
+body {
+	margin: 0;
+}
+.success,
+.error {
+	color: #edebeb;
+	padding: 5px;
+	margin: 5px 0 15px 0;
+}
+
+.success {
+	background: #099609;
+}
+
+.error {
+	background: #fc0796;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+h5 {
+	margin: 0;
+	padding: 10px 0;
+}
+form{
+  margin: 0;
+  padding: 10px 0;
+}

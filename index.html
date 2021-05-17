@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/skeleton.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Book List</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h5><a href="http://127.0.0.1:8080/">লাইব্রেরী মেনেজমেন্ট প্রজেক্ট</a></h5>
+
+      <form id="book_form">
+        <input type="text" id="title" class="u-full-width" placeholder="বই">
+        <input type="text" id="author" class="u-full-width" placeholder="লেখক">
+        <input type="text" id="isbn" class="u-full-width" placeholder="নাম্বার">
+        <input type="submit" class="u-full-width" value="বই যুক্ত কর">
+      </form>
+
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>বইয়ের নাম</th>
+            <th>লেখক</th>
+            <th>নাম্বার</th>
+            <th>ডিলিট</th>
+          </tr>
+        </thead>
+        <tbody id="book_list"></tbody>
+      </table>
+
+    </div>
+    <script src="pracDel00.js"></script>
+  </body>
+
+</html>

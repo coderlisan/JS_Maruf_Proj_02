@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <title>ফাংশন সমুহের বিবরণ</title>
+  </head>
+
+  <body style="font-family: 'Baloo Da 2';padding: 2vw 15vw;font-size: 20px">
+
+    <li>০১_document.querySelector দিয়ে প্রয়োজনীয় ডমগুলি ধর</li>
+    <li>০২_ঐ_ধৃত DOM এ ইভেন্ট লিসেনার ফাংশন এড কর</li>
+    <li>০৩_ইভেন্ট লিসেনার এ যে ফাংশন ডিক্লিয়ার করা হবে সেটা ডিফাইন কর</li>
+    <li>০৪_অবজেক্ট ক্লাশ/কন্সট্রাক্টর মেশিন তৈরী কর Book এর জন্য</li>
+    <li>০৫_ফাঁকা সাবমিট করলে error শো করাবে, ফিলাপ করলে DOM এ এড করাবে</li>
+    <li>০৬_nBook ডমে শো-করার class তৈরী, !pMiter = !constr.., শুধু static ফাং</li>
+    <li>০৬_ভালভাবে সাবমিট করলে, আরেকটি Class এর মাধ্যমে সেই ফাংগুলি পাস কর</li>
+    <li>০৭_এই ফাংশনসকে UI ক্লাশের ভিতরে static ফাংশন আকারে ডিফাইন কর</li>
+    <li>০৮_localStorage এ ডাটা সেভ কর</li>
+    <li>০৯_localStorage এ সেভ করা ডাটাকে DOM এ ডিজপ্লে কর</li>
+    <li>১০_Book List থেকে ডাটাকে localStorage সহ রিমুভ করা</li>
+    <li>১১_লিস্ট থেকে ডিলিটের চুড়ান্ত ফাংশন ডিক্লিয়ার এবং ডিফাইন করা</li>
+
+    <p>
+      newBook(e) এর বিবরণ: প্রথমেই form এর ভ্যালু গুলাকে তিনটি let এ রাখতে হবে। পরে constructor এর সাহায্যে book নামে অবজেক্ট তৈরী করে ভ্যালু ‍গুলাকে অবজেক্ট এর ভ্যালু আকারে পাছ করতে হবে। পরে ইউজারের কাছ থেকে ডাটা গুলাকে if else মাধ্যমে নিতে হবে। ফাঁকা সাবমিট করলে showAlert() আর সম্পুর্ন Fill Up করে সাবমিট করলে addToBookList(book) শেষে DOM এ ডাটা গুলাকে ধরে রাখার জন্য e.preventDefault() এই ফাংশন টি ব্যবহার করতে হবে।
+    </p>
+
+    <p>
+      addToBookList() এর বিবরণ: আসলে book এর ভিতরে title, author ও isbn এই তিনটির ভ্যালুই আছে, যেই ভ্যালু গুলা আমরা ইউজারের কাছ থেকে else{addToBookList(book)} এর মাধ্যমে নিচ্ছি। তাই প্রথমেই আমরা let এর ভিতরে tr টেগ তৈরী করে রাখব। পরে .innerHTML দিয়ে td এর ভিতরে book এর ভ্যালু গুলাকে ${book.title} আকারে পাছ করব। পরে appendChild দিয়ে পুশ করে দিব।
+    </p>
+
+    <p>
+      showAlert() এর বিবরণ: এতে দুটি প্যারামিটার আর্গুমেন্ট আকারে পাছ করা হবে ১টি message আর অন্যটি className স্টাইল পাছ করার জন্য। প্রথমেই একটি p টেগ তৈরী করতে হবে let এর ভিতরে, সেই টেগে দুটি ক্লাশনেম পাছ করতে হবে একটি static আরেকটি dynamic । পরে appendChild দিয়ে TextNode এ dynamic মেসেজ পাছ করতে হবে। পরে container কে একটি let এর ভিতর ধরতে হবে। পরে insertBefore দিয়ে form টেগের পুর্বে p টেগকে পাছ করতে হবে। শেষে setTimeout() দিয়ে সেই টেগকে নির্দিষ্ট সময় পরে রিমুভ করতে হবে।
+    </p>
+
+    <p>
+      clearFields() এর বিবরণ: querySelector দিয়ে ভ্যালু গুলাকে ধরে, = ‘’ এ রাখলেই হবে।
+    </p>
+
+    <p>
+      localStorage এ ডাটা সেভ করা: প্রথমেই একটি class তৈরী করে, book list চেক করার জন্য একটি checkBook() নামে স্টেটিক ফাংশন ডিক্লিয়ার করতে হবে। books নামে একটি let ডিক্লিয়ার করতে হবে। localStorage.getItem() দিয়ে ডাটা রিড করা হয়, localStorage.setItem() দিয়ে ডাটা নতুন করে add করা হয়। else এর মাধ্যমে localStorage.getItem() দিয়ে ডাটা লিস্ট রিটার্ন করতে হবে। পরে addBookToStore() নামে ফাংশন ডিক্লিয়ার করে localStorage.setItem() দিয়ে ডাটা এড কর। তারপর displayToDom() নামে একটি ফাংশনের মাধ্যমে forEach(লুপ) করে ডাটা গুলাকে ডমে শো করতে হবে। কেননা সেখানে অনেক গুলা বইয়ের লিস্ট থাকবে।
+    </p>
+
+    <p>
+      Store.displayBooks() এর বিবরণ: প্রথমে DOMContentLoaded দিয়ে addEventListener রাখতে হবে। পরে Store ক্লাশের ভিতরে ডিফাইন করতে হবে। Defination: প্রথমে Store.getBooks() কে একটা ভ্যরিয়্যাবলের ভিতরে রেখে সেটাকে forEach লুপের ভিতরে কলব্যাক ফাংশনের মাধ্যমে addToBookList() কে পাছ করতে হবে।
+    </p>
+
+    <p>
+      removeBook(e) এর বিবরণ: প্রথমে UI.deleteBook(e.target) ফাংশনকে ডিক্লিয়ার করতে হবে। পরে e প্যারামিটার ধরে preventDefault() কে পাছ করতে হবে। deleteBook() এর ভিতরে target প্যারামিটারকে পাছ করতে হবে। তারপর if else এর মাধ্যমে ‍href দিয়ে a টেগের প্যারেন্ট টেগকে ধরতে হবে। পরে সেটাকে DOM এবং Store দুইটা থেকেই রিমুভ করতে হবে।
+    </p>
+
+  </body>
+
+</html>
